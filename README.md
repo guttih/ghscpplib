@@ -1,7 +1,7 @@
 # ghscpplib
 
 My library functions
-
+The minimum branch
 
 ## Sources
 

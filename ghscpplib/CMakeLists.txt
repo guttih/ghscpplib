@@ -24,6 +24,9 @@ set_target_properties("${PROJECT_NAME}" PROPERTIES
 	RELWITHDEBINFO_POSTFIX "${STATIC_POSTFIX}-rd"
 )
 
+include(CTest)
+enable_testing()
+
 include("GenerateExportHeader")
 generate_export_header("${PROJECT_NAME}")
 install(FILES "${CMAKE_CURRENT_BINARY_DIR}/ghscpplib_export.h" DESTINATION "include")
@@ -31,6 +34,7 @@ install(FILES "${CMAKE_CURRENT_BINARY_DIR}/ghscpplib_export.h" DESTINATION "incl
 
 add_subdirectory("include")
 add_subdirectory("src")
+add_subdirectory("test")
 
 set(GHSCPPLIB_CONFIG_DIR "lib/cmake/${PROJECT_NAME}")
 configure_file("${GhsCppLib_SOURCE_DIR}/cmake/GhsCppLibConfig.cmake.in" "${GhsCppLib_BINARY_DIR}/${GHSCPPLIB_CONFIG_DIR}/GhsCppLibConfig.cmake")
