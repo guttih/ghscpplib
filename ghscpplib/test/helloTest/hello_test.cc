@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include <GhsCppLib/Version.h>
+#include <GhsCppLib/Hello.h>
 
 // Demonstrate some basic assertions.
 TEST(HelloTest, BasicAssertions) {
@@ -7,7 +7,5 @@ TEST(HelloTest, BasicAssertions) {
   EXPECT_STRNE("hello", "world");
   // Expect equality.
   EXPECT_EQ(7 * 6, 42);
-  Version vv("1.2");
-  vv.IncrementMinor();
-  EXPECT_STREQ(vv.c_str(), "1.3");
+  hello();
 }
