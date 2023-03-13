@@ -16,7 +16,7 @@ Information on how I learned to setup this library.
 These instructions are written when installing and using this library on a
 Rocky linux operating system using Visual Studio Code with the [CMake extension](https://marketplace.visualstudio.com/items?itemName=twxs.cmake) installed.  The process should be similar on other systems.
 
-### Install the library on Linux
+### Installing the library on Linux
 
 1. Open this project in Visual Studio Code 
 2. On the bottom bar select Release configuration *CMake: [Release]*
@@ -26,10 +26,23 @@ Rocky linux operating system using Visual Studio Code with the [CMake extension]
    ```shell
    cd build
    make
-   make install
+   sudo make install
    ```
 
-### Use the library
+### Uninstalling the library on Linux
+
+Open a terminal and cd into the library build directory and 
+remove installed files, by giving the following commands:
+```shell
+cd build
+#make sure this file exists in current directory
+cat install_manifest.txt | sudo xargs rm
+sudo rmdir $(dirname $(grep "Version.h" install_manifest.txt))
+sudo rmdir $(dirname $(grep "Version.cpp" install_manifest.txt))
+sudo rmdir $(dirname $(grep "GhsCppLibConfig.cmake" install_manifest.txt))
+```
+
+### Using the library
 
 Now when the library is installed let's create a hello world project which 
 uses the library, link, build and then run it.
