@@ -35,11 +35,11 @@ Open a terminal and cd into the library build directory and
 remove installed files, by giving the following commands:
 ```shell
 cd build
-#make sure this file exists in current directory
+# Make sure the file install_manifest.txt exists in current directory before continuing.
 cat install_manifest.txt | sudo xargs rm
-sudo rmdir $(dirname $(grep "Version.h" install_manifest.txt))
-sudo rmdir $(dirname $(grep "Version.cpp" install_manifest.txt))
-sudo rmdir $(dirname $(grep "GhsCppLibConfig.cmake" install_manifest.txt))
+sudo rmdir $(dirname $(grep "/Version.h" install_manifest.txt))
+sudo rmdir $(dirname $(grep "/Version.cpp" install_manifest.txt))
+sudo rmdir $(dirname $(grep "/GhsCppLibConfig.cmake" install_manifest.txt))
 ```
 
 ### Using the library
